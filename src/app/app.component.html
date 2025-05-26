@@ -1,19 +1,30 @@
-﻿
-<nav class="navbar navbar-expand navbar-dark bg-primary px-3 justify-content-center"*ngIf="user">
-    <div class="navbar-nav">
-      <div class="d-flex align-items-center"></div>
-      <span class="navbar-brand mb-0 h1" >Nastia</span>
-        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Utilisateur</a>
-        <button class="btn btn-link nav-item nav-link" (click)="logout()">Déconnecter</button>
+﻿<nav class="navbar navbar-expand navbar-dark bg-primary px-3" *ngIf="user">
+  <div class="container-fluid d-flex align-items-center position-relative w-100">
 
-
+    <!-- 🟦 Zone gauche -->
+    <div class="d-flex">
+      <div class="navbar-brand mb-0 h1" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Accueil
+      </div>
+      <a class="navbar-brand mb-0 h1" routerLink="/users" routerLinkActive="active">
+        Utilisateur
+      </a>
     </div>
+
+    <!-- 🟦 Titre centré -->
+    <div class="position-absolute start-50 translate-middle-x">
+      <span class="navbar-brand mb-0 h1">Nastia - Transactis</span>
+    </div>
+
+    <!-- 🟦 Zone droite -->
+    <div class="ms-auto">
+      <button class="btn btn-outline-light" (click)="logout()">Déconnecter</button>
+    </div>
+
+  </div>
 </nav>
 
-
 <div class="app-container" [ngClass]="{ 'bg-light': user }">
-    <alert></alert>
-    <router-outlet></router-outlet>
+  <alert></alert>
+  <router-outlet></router-outlet>
 </div>
-
