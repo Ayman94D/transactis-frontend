@@ -1,0 +1,19 @@
+﻿
+<nav class="navbar navbar-expand navbar-dark bg-primary px-3 justify-content-center"*ngIf="user">
+    <div class="navbar-nav">
+      <div class="d-flex align-items-center"></div>
+      <span class="navbar-brand mb-0 h1" >Nastia</span>
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Utilisateur</a>
+        <button class="btn btn-link nav-item nav-link" (click)="logout()">Déconnecter</button>
+
+
+    </div>
+</nav>
+
+
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+    <alert></alert>
+    <router-outlet></router-outlet>
+</div>
+
